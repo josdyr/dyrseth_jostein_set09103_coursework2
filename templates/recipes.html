@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+<!-- RECIPES CONTENT -->
+{% block recipes_content %}
+<div class="recipes_content">
+  {% for recipe in recipes_dict.items() %}
+    <div class="recipe_card">
+      recipe
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

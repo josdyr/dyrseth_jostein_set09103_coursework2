@@ -1,0 +1,101 @@
+.header {
+  background-color: rgba(134,224,122,1);
+  color: white;
+  height: 66px;
+  box-shadow: 0 5px 3px 0 rgba(0,0,0,.2);
+  position: fixed;
+  width: 100%;
+  margin-bottom: 100px;
+  text-align: center; /*center*/
+  top: 0;
+}
+
+.material-icons {
+  transform: scale(1.2);
+  float: left;
+}
+
+.material-icons:hover {
+  cursor: pointer;
+}
+
+.menu_icon {
+  /*margin: 21px;*/
+}
+
+body > div.header > input {
+  font-size: 18px;
+  background-color: rgba(255,255,255,.2);
+  border-radius: 3px;
+  border: none;
+  width: 45%;
+  height: 46px;
+  cursor: text;
+  padding-left: 30px;
+  display: inline-block; /*center*/
+  margin-top: 10px;
+}
+
+body > div.header > input::-webkit-input-placeholder {
+  color: rgba(255,255,255,.7);
+}
+
+body > div.header > input:hover,
+body > div.header > input:focus {
+  background-color: rgba(255,255,255,.4);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+button#test {
+  float: right;
+  margin: 14px 12px 0 12px;
+  transform: scale(1.15);
+  color: white;
+}
+
+#header_title {
+  float: left;
+  width: 80px;
+  font-size: 26px;
+  margin-top: 15px;
+}
+
+#signup {
+  margin: 300px 150px 20px 150px;
+}
+
+#user_icon:hover {
+  cursor: pointer;
+}
+
+.lower_btn {
+  position: fixed;
+  float: right;
+  bottom: 0;
+  right: 0;
+  margin: 25px;
+}
+
+body > div.lower_btn > button > span {
+}
+
+.modal {
+
+}
+
+.recipes_content {
+  margin: 100px;
+  display: inline
+}
+
+.recipe_card {
+  background-color: green;
+  width: 60px;
+  height: 120px;
+}
