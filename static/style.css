@@ -144,7 +144,7 @@ img {
 }
 
 .recipe_content {
-  margin: 120px auto 100px auto;
+  margin: 120px auto 130px auto;
   width: 75%;
 }
 
@@ -210,4 +210,14 @@ span.recipe_span {
   width: 45%;
   font-size: 17px;
   color: rgba(0,0,0,.6)
+}
+
+.comments_content {
+  width: 75%;
+  background-color: rgba(72,177,249,.2);
+  margin: auto;
+  border-radius: 5px;
+  color: rgba(0,0,0,.7);
+  padding: 10px;
+  margin-bottom: 20px;
 }

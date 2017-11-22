@@ -42,4 +42,11 @@
     {% endfor %}
   </table>
 </div>
+<div class="comments_content">
+  <h2 style="text-align: center">Comments:</h2>
+  {% for comment in recipes_dict[current_recipe]["comments"] %}
+    <h3>{{ comment["header"] }}</h3>
+    <h4>{{ comment["comment"] }}</h4>
+  {% endfor %}
+</div>
 {% endblock %}

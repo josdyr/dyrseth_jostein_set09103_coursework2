@@ -1,8 +1,16 @@
 {
-  "lkj": {
-    "user_name": "jos",
-    "full_name": "jossy",
-    "email": "lkj",
-    "password": "k1"
+  "josdyr@gmail.com": {
+    "username": "josdyr",
+    "full_name": "Jostein Dyrseth",
+    "email": "josdyr@gmail.com",
+    "password": "Hello123",
+    "pw_hash": "pbkdf2:sha256:50000$FWdw6ad2$40399dafcd69e154cbdec7cd813c63f96d0d5d0c968d04f0496732bf1a01f21a"
+  },
+  "josdyr@hotmail.com": {
+    "username": "josdyr2",
+    "full_name": "Jossy",
+    "email": "josdyr@hotmail.com",
+    "password": "Hello1234",
+    "pw_hash": "pbkdf2:sha256:50000$HC0Lz9FZ$484ce8fc40738519ffca089d1d7ef8ae649c308b5c324857f7c9a9a35c398636"
   }
 }

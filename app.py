@@ -5,9 +5,26 @@ from flask import render_template
 from flask import request
 from flask import url_for
 from werkzeug.utils import secure_filename
+from werkzeug.security import generate_password_hash, check_password_hash
 
 import json
 import os
+
+
+class User(object):
+
+    def __init__(self, username, full_name, email, password):
+        self.username = username
+        self.full_name = full_name
+        self.email = email
+        self.password = password
+        self.set_password(password)
+
+    def set_password(self, password):
+        self.pw_hash = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.pw_hash, password)
 
 
 UPLOAD_FOLDER = '/Users/josdyr/university/modules/advanced_web_technologies/dyrseth_jostein_set09103_coursework2/static/images'
@@ -54,6 +71,23 @@ def map_form_to_recipes(form, filename):
     return current_recipe
 
 
+def map_to_user(form):
+    current_reg_user2 = {}
+    current_reg_user = User(form["user_name"], form["full_name"], form["email"], form["password"])
+    current_reg_user2["username"] = current_reg_user.username
+    current_reg_user2["full_name"] = current_reg_user.full_name
+    current_reg_user2["email"] = current_reg_user.email
+    current_reg_user2["password"] = current_reg_user.password
+    current_reg_user2["pw_hash"] = current_reg_user.pw_hash
+    return current_reg_user2
+
+
+def map_to_only_user(current_user):
+    current_reg_user = User(current_user["username"], current_user["full_name"],
+                            current_user["email"], current_user["password"])
+    return current_reg_user
+
+
 @app.route('/popular', methods=['GET', 'POST'])
 def popular():
 
@@ -62,7 +96,6 @@ def popular():
         user_dict = json.load(in_file)
         in_file.close()
 
-    # if request.method == "POST" and "title" in request.form:
     if request.method == "POST" and "filename" in request.files:
         file = request.files['filename']
         if file and allowed_file(file.filename):
@@ -82,16 +115,19 @@ def popular():
 
         # check if local file corresponds with the provided form values
         if request.form['reg_email'] in user_dict:
-            current_user = request.form['reg_email']
-            print(current_user)
-            print("the email is in the dict")
-            if request.form['reg_password'] == str(user_dict[current_user]['password']):
-                return render_template("recipes.html")
 
-    elif request.method == 'POST':  # if POST / Signup
+            user_current = user_dict[request.form["reg_email"]]
+
+            user_current_object = map_to_only_user(user_current)
+
+            if check_password_hash(user_current_object.pw_hash, request.form["reg_password"]):
+                print("Granted Access")
+                return render_template("recipes.html", recipes_dict=recipes_dict, categorie=categories[0])
+
+    elif request.method == 'POST' and "password" in request.form:  # if POST / Signup
 
         # append
-        user_dict[request.form['email']] = request.form
+        user_dict[request.form["email"]] = map_to_user(request.form)
 
         # write .json users
         with open('static/users_info.json', 'w') as outfile:

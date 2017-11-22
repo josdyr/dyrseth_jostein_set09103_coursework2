@@ -21,7 +21,17 @@
     "cooking_time": "5 MINS",
     "serves": "1",
     "difficulty": "EASY",
-    "filename": "banana_milkshake.jpg"
+    "filename": "banana_milkshake.jpg",
+    "comments": [
+      {
+        "header": "Great.",
+        "comment": "This is such a good recipe."
+      },
+      {
+        "header": "Awesome",
+        "comment": "Me and my husband love it!"
+      }
+    ]
   },
   "Strawberry ice cream shake": {
     "title": "Strawberry ice cream shake",
@@ -45,6 +55,16 @@
     "cooking_time": "3 MINS",
     "serves": "4",
     "difficulty": "MEDIUM",
-    "filename": "strawberry_milkshake.jpg"
+    "filename": "strawberry_milkshake.jpg",
+    "comments": [
+      {
+        "header": "Cool.",
+        "comment": "This Strawberry ice cream shake is just amazing. It is a must try!"
+      },
+      {
+        "header": "Wonderful and so Quick",
+        "comment": "Love love love. This app is just wonderful! I love it with all of my hart. And this shake is shaking things up, thats for sure."
+      }
+    ]
   }
 }
