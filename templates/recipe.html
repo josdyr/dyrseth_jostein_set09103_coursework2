@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+
+<!-- RECIPE CONTENT -->
+{% block recipe_content %}
+<div class="recipe_content">
+  <div class="recipe_img">
+    <img src="../static/images/{{ recipes_dict[current_recipe]["filename"] }}">
+  </div>
+  <span class="recipe_span">
+    <h1>
+      {{ recipes_dict[current_recipe]["title"] }}
+    </h1>
+    {{ recipes_dict[current_recipe]["description"] }}
+  </span>
+  <div class="recipe_info">
+    <table>
+      <tr>
+        <td>RATING: {{ recipes_dict[current_recipe]["rating"] }}</td>
+        <td>SERVES: {{ recipes_dict[current_recipe]["serves"] }}</td>
+        <td>DIFFICULTY: {{ recipes_dict[current_recipe]["difficulty"] }}</td>
+      </tr>
+    </table>
+  </div>
+  <table class="ingredients">
+    <tr>
+      <th>Ingredients</th>
+    </tr>
+    {% for ingredient in recipes_dict[current_recipe]["ingredients"] %}
+      <tr>
+        <td>{{ ingredient }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  <table class="method">
+    <tr>
+      <th>Method</th>
+    </tr>
+    {% for method in recipes_dict[current_recipe]["method"] %}
+      <tr>
+        <td>{{ method }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

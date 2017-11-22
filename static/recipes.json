@@ -1,42 +1,50 @@
 {
-  "j": {
-    "title_of_recipe": "j",
-    "description": "j",
-    "ingredients": "j",
-    "method": "j",
-    "rating": "j",
-    "cooking_time": "j",
-    "serves": "j",
-    "difficulty": "j"
+  "Banan Milkshake": {
+    "title": "Banan Milkshake",
+    "description": "An easy fruit shake you can create up in minutes, with creamy vanilla ice cream, a pinch of cinnamon and a swizzle of whipped cream. An easy fruit shake you can create up in minutes, with creamy vanilla ice cream, a pinch of cinnamon and a swizzle of whipped cream.",
+    "ingredients": [
+      "250ml semi-skimmed milk",
+      "1 scoop vanilla ice cream",
+      "2 bananas chopped",
+      "50ml double cream whipped",
+      "pinch cinnamon",
+      "a few dried banana chips",
+      "1 fresh cherry"
+    ],
+    "method": [
+      "Put the milk, vanilla ice cream and banana into a blender.",
+      "Whizz everything up until smooth then pour into a tall glass.",
+      "Top with a big spoonful of whipped cream.",
+      "Decorate with a pinch of cinnamon, some banana chips and a cherry. Serve immediately with a colourful straw."
+    ],
+    "rating": "7/10",
+    "cooking_time": "5 MINS",
+    "serves": "1",
+    "difficulty": "EASY",
+    "filename": "banana_milkshake.jpg"
   },
-  "j": {
-    "title_of_recipe": "j",
-    "description": "j",
-    "ingredients": "j",
-    "method": "j",
-    "rating": "j",
-    "cooking_time": "j",
-    "serves": "j",
-    "difficulty": "j"
-  },
-  "j": {
-    "title_of_recipe": "j",
-    "description": "j",
-    "ingredients": "j",
-    "method": "j",
-    "rating": "j",
-    "cooking_time": "j",
-    "serves": "j",
-    "difficulty": "j"
-  },
-  "j": {
-    "title_of_recipe": "j",
-    "description": "j",
-    "ingredients": "j",
-    "method": "j",
-    "rating": "j",
-    "cooking_time": "j",
-    "serves": "j",
-    "difficulty": "j"
+  "Strawberry ice cream shake": {
+    "title": "Strawberry ice cream shake",
+    "description": "Make yourself a naughty but nice summery treat, justified by lots of fruit! It is really good you can't beleave it. Honestly. Make yourself a naughty but nice summery treat, justified by lots of fruit!",
+    "ingredients": [
+      "225g strawberry, hulled",
+      "300ml cold milk",
+      "3 large scoops vanilla ice cream",
+      "extra strawberries, to serve (optional)",
+      "pinch cinnamon",
+      "a few dried banana chips",
+      "1 fresh cherry"
+    ],
+    "method": [
+      "Put the milk, vanilla ice cream and banana into a blender.",
+      "Whizz everything up until smooth then pour into a tall glass.",
+      "Top with a big spoonful of whipped cream.",
+      "Decorate with a pinch of cinnamon, some banana chips and a cherry. Serve immediately with a colourful straw."
+    ],
+    "rating": "10/10",
+    "cooking_time": "3 MINS",
+    "serves": "4",
+    "difficulty": "MEDIUM",
+    "filename": "strawberry_milkshake.jpg"
   }
 }

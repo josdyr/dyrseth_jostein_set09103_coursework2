@@ -3,10 +3,22 @@
 <!-- RECIPES CONTENT -->
 {% block recipes_content %}
 <div class="recipes_content">
-  {% for recipe in recipes_dict.items() %}
+  {% for recipe, value in recipes_dict.items() %}
+  <a href="/{{ value["title"] }}" style="float: left">
     <div class="recipe_card">
-      recipe
+      <img src="../static/images/{{ value["filename"] }}" style="width: 100%">
+      <div class="card_text">
+        <h1>{{ value["title"] }}</h1>
+        <span>{{ value["description"] }}</span>
+        {# {% for ingredient in value.ingredients %}
+          <li>{{ ingredient }}</li>
+        {% endfor %} #}
+      </div>
+      <div class="card_footer">
+        <img id="comment_btn" src="/static/images/ic_comment_black_48dp_2x.png">
+      </div>
     </div>
+  </a>
   {% endfor %}
 </div>
 {% endblock %}

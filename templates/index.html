@@ -5,20 +5,16 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Local CSS -->
-    <link rel="stylesheet" href="../static/style.css">
-
-    <!-- Material Design Lite -->
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
-    <!-- Material Design icon font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
+    <!-- MATERIALIZE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-
-    <!-- MATERIALIZE -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- Material Design icon font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="../static/style.css">
   </head>
   <body>
     <!-- <h1>Hello, world!</h1> -->
@@ -32,24 +28,21 @@
       </div>
 
       <div id="header_title">
-        Drinks
+        {{ categorie }}
       </div>
 
-      <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="my_icon">
+      <ul class="header-menu mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="my_icon">
         <a href="/popular">
-          <li class="mdl-menu__item">Food</li>
+          <li class="mdl-menu__item">Popular</li>
         </a>
-        <a href="/action">
-          <li class="mdl-menu__item">Food</li>
+        <a href="/dishes">
+          <li class="mdl-menu__item">Dishes</li>
         </a>
-        <a href="/comedy">
-          <li class="mdl-menu__item">Food</li>
+        <a href="/drinks">
+          <li class="mdl-menu__item">Drinks</li>
         </a>
-        <a href="/documentary">
-          <li class="mdl-menu__item">Food</li>
-        </a>
-        <a href="/drama">
-          <li class="mdl-menu__item">Food</li>
+        <a href="/healthy">
+          <li class="mdl-menu__item">Healthy</li>
         </a>
       </ul>
 
@@ -57,6 +50,7 @@
       <!-- <div id="menu_text">Popular</div> -->
       <!-- <i class="material-icons" id="search_icon">search</i> -->
       <input placeholder="Search In {{ categorie }}" method="post" name="reg_search">
+      <input type="submit" style="display: none">
 
       <!-- SIGN UP -->
       <button id="test" onclick="my_func2()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
@@ -117,11 +111,12 @@
         <h4>Add Recipe</h4>
       </div>
       <div class="modal-footer">
-        <form id="signup" method="post">
-          <input type="text" name="title_of_recipe" placeholder="Title of Recipe">
+        <form id="signup" method=post enctype=multipart/form-data>
+          <input type=file name=filename>
+          <input type="text" name="title" placeholder="Title">
           <input type="text" name="description" placeholder="Add Description">
           <input type="text" name="ingredients" placeholder="Ingredients [comma separated]">
-          <input type="text" name="method" placeholder="method [comma separated]">
+          <input type="text" name="method" placeholder="Methods [comma separated]">
           <input type="text" name="rating" placeholder="rating">
           <input type="text" name="cooking_time" placeholder="cooking_time">
           <input type="text" name="serves" placeholder="serves">
@@ -133,6 +128,17 @@
 
     {% block recipes_content %}
     {% endblock %}
+
+    {% block recipe_content %}
+    {% endblock %}
+
+    {% block thank_you %}
+    {% endblock %}
+
+    <!-- Large Tooltip -->
+    <div class="mdl-tooltip mdl-tooltip--large" for="comment_btn">
+    Comment
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

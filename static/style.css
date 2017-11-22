@@ -1,8 +1,8 @@
 .header {
-  background-color: rgba(134,224,122,1);
+  background-color: rgba(72,177,249,1);
   color: white;
   height: 66px;
-  box-shadow: 0 5px 3px 0 rgba(0,0,0,.2);
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,.2);
   position: fixed;
   width: 100%;
   margin-bottom: 100px;
@@ -20,7 +20,8 @@
 }
 
 .menu_icon {
-  /*margin: 21px;*/
+  margin: 21px;
+  float: left;
 }
 
 body > div.header > input {
@@ -63,11 +64,11 @@ button#test {
   float: left;
   width: 80px;
   font-size: 26px;
-  margin-top: 15px;
+  margin: 23px 10px;
 }
 
 #signup {
-  margin: 300px 150px 20px 150px;
+  margin: 550px 150px 20px 150px;
 }
 
 #user_icon:hover {
@@ -82,20 +83,131 @@ button#test {
   margin: 25px;
 }
 
-body > div.lower_btn > button > span {
-}
-
-.modal {
-
-}
-
 .recipes_content {
   margin: 100px;
-  display: inline
+  text-align: center;
 }
 
 .recipe_card {
-  background-color: green;
-  width: 60px;
-  height: 120px;
+  display: inline-block;
+  background-color: rgba(72,177,249,0.3);
+  width: 400px;
+  height: 550px;
+  border-radius: 5px;
+  margin: 10px;
+  color: rgba(0,0,0,.7);
+}
+
+.recipe_card:hover {
+  cursor: pointer;
+  box-shadow: 0 0 0 4px rgba(72,177,249,1);
+}
+
+ul.header-menu > a[href]:nth-child(odd) {
+
+}
+
+div.recipes_content > div > div > p {
+  text-align: left;
+  margin: 15px 10px 0px 10px;
+}
+
+div.recipes_content > a > div > div.card_text > h1 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+div.card_text {
+  text-align: left;
+  margin: 8px 10px 8px 10px;
+}
+
+img {
+  border-radius: 5px;
+}
+
+.card_footer {
+  height: 42px;
+  position: absolute;
+  width: 400px;
+}
+
+.card_footer > #comment_btn {
+  height: 100%;
+  opacity: 0.6;
+  float: right;
+  margin: 3px 25px 3px 25px;
+}
+
+.card_footer > #comment_btn:hover {
+  opacity: 0.8;
+}
+
+.recipe_content {
+  margin: 120px auto 100px auto;
+  width: 75%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.ingredients {
+  float: left;
+  width: 49.6%;
+  margin: 0 10px 0 0;
+}
+
+.method {
+  width: 49.6%;
+  margin: 0 0 0 10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(72,177,249,.12)
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(72,177,249,.07)
+}
+
+th {
+    background-color: rgba(72,177,249,.5);
+    color: white;
+}
+
+.recipe_img > img {
+  width: 40%;
+  float: right;
+  margin: 0 0 20px 20px;
+}
+
+#ty {
+  margin: 100px;
+  padding: 100px;
+  text-align: center;
+}
+
+.recipe_info {
+  margin: 10px 0;
+}
+
+.recipe_title {
+  width: 49.6%;
+}
+
+span.recipe_span h1 {
+  color: rgba(0,0,0,.8)
+}
+
+span.recipe_span {
+  display: block; /* or inline-block */
+  width: 45%;
+  font-size: 17px;
+  color: rgba(0,0,0,.6)
 }
