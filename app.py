@@ -17,7 +17,6 @@ class User(object):
         self.username = username
         self.full_name = full_name
         self.email = email
-        self.password = password
         self.set_password(password)
 
     def set_password(self, password):
@@ -27,6 +26,7 @@ class User(object):
         return check_password_hash(self.pw_hash, password)
 
 
+user_logged_in = False
 UPLOAD_FOLDER = '/Users/josdyr/university/modules/advanced_web_technologies/dyrseth_jostein_set09103_coursework2/static/images'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 categories = ["Popular", "Dishes", "Drinks", "Healthy"]
@@ -77,14 +77,13 @@ def map_to_user(form):
     current_reg_user2["username"] = current_reg_user.username
     current_reg_user2["full_name"] = current_reg_user.full_name
     current_reg_user2["email"] = current_reg_user.email
-    current_reg_user2["password"] = current_reg_user.password
     current_reg_user2["pw_hash"] = current_reg_user.pw_hash
     return current_reg_user2
 
 
-def map_to_only_user(current_user):
+def map_to_only_user(current_user, current_password):
     current_reg_user = User(current_user["username"], current_user["full_name"],
-                            current_user["email"], current_user["password"])
+                            current_user["email"], current_password)
     return current_reg_user
 
 
@@ -117,12 +116,14 @@ def popular():
         if request.form['reg_email'] in user_dict:
 
             user_current = user_dict[request.form["reg_email"]]
+            current_password = request.form["reg_password"]
 
-            user_current_object = map_to_only_user(user_current)
+            user_current_object = map_to_only_user(user_current, current_password)
 
-            if check_password_hash(user_current_object.pw_hash, request.form["reg_password"]):
+            if check_password_hash(user_current_object.pw_hash, current_password):
                 print("Granted Access")
-                return render_template("recipes.html", recipes_dict=recipes_dict, categorie=categories[0])
+                user_logged_in = True
+                return render_template("recipes.html", recipes_dict=recipes_dict, categorie=categories[0], user_logged_in=user_logged_in)
 
     elif request.method == 'POST' and "password" in request.form:  # if POST / Signup
 
